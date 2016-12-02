@@ -1,12 +1,12 @@
 var dataParser = {
 
-  parse: function( data ) {
+  splitData: function( data ) {
 
     var items = data.split( ", " );
     return items;
   },
 
-  getValues: function( entry ) {
+  getDirectionCount: function( entry ) {
 
     var direction = entry[0];
     var countString = entry.substring( 1 );
