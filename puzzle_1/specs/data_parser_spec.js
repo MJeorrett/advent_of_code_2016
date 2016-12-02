@@ -1,7 +1,14 @@
 var assert = require('assert');
-var dataParser = require('../data_parser');
+var DataParser = require('../data_parser');
 
 describe( "Data Parser", function() {
+
+  var dataParser = null;
+
+  beforeEach( function() {
+
+    dataParser = new DataParser();
+  });
 
   it( "should parse test 1 correctly", function() {
 
