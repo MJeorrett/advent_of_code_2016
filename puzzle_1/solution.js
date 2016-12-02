@@ -7,8 +7,8 @@ var Solution = function() {
 
   var self = this;
 
-  this.moveX = function( count ) { this.xTotal += count },
-  this.moveY = function( count ) { this.yTotal += count },
+  this.moveX = function( count ) { this.xTotal += count };
+  this.moveY = function( count ) { this.yTotal += count };
 
   this.right = {
     turnRight: 'down',
