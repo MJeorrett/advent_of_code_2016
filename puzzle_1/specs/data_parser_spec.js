@@ -31,9 +31,9 @@ describe( "Data Parser", function() {
 
     var input = "R14, L3";
     dataParser.parseData( input )
-    assert.equal( ["turnRight", 14], dataParser.next() );
-    assert.equal( ["turnLeft", 3], dataParser.next() );
-    assert.equal( null, dataParser.next() );
+    assert.deepEqual( ["turnRight", 14], dataParser.next() );
+    assert.deepEqual( ["turnLeft", 3], dataParser.next() );
+    assert.equal( undefined, dataParser.next() );
   });
 
 });
