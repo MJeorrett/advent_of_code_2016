@@ -1,4 +1,5 @@
 var assert = require('assert');
+var Solution = require('../solution');
 
 describe( "Solution", function() {
 
