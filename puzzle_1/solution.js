@@ -2,8 +2,11 @@ var Solution = function() {
 
   this.xTotal = 0;
   this.yTotal = 0;
+}
 
-  this.model = {
+Solution.prototype = {
+
+  model: {
     right: {
       turnRight: 'down',
       turnLeft: 'up',
@@ -25,6 +28,7 @@ var Solution = function() {
       move: function( count ) { this.y -= count }
     }
   }
+
 }
 
 module.exports = Solution;
