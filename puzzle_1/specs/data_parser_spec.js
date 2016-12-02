@@ -27,5 +27,13 @@ describe( "Data Parser", function() {
     assert.deepEqual( expected, dataParser.data );
   });
 
+  it( "should return items in order from next()", function() {
+
+    var input = "R14, L3";
+    dataParser.parseData( input )
+    assert.equal( ["turnRight", 14], dataParser.next() );
+    assert.equal( ["turnLeft", 3], dataParser.next() );
+    assert.equal( null, dataParser.next() );
+  });
 
 });
