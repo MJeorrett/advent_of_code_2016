@@ -12,7 +12,7 @@ describe( "Data Parser", function() {
     assert.deepEqual( ["R", 14], dataParser.getDirectionCount( "R14" ) );
   })
 
-  it( "should return array of directions and counts from parseValues -- test 1", function() {
+  it( "should return array of directions and counts from parseData -- test 1", function() {
     var input = "R14, L3";
     var expected = [["R", 14], ["L", 3]];
     assert.deepEqual( expected, dataParser.parseData( input ) );
