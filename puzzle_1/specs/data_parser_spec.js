@@ -7,4 +7,8 @@ describe( "Data Parser", function() {
 
     assert.deepEqual( ["R3", "L3"], dataParser.parse( "R3, L3" ) );
   });
+
+  it( "should split value into direction and count", function() {
+    assert.deepEqual( ["R", 14], dataParser.getValues( "R14" ) );
+  })
 });
