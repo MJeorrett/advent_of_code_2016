@@ -6,7 +6,7 @@ var Solution = function() {
   this.model = {
     right: {
       turnRight: 'down',
-      turnLeft: 'up'
+      turnLeft: 'up',
       move: function( count ) { this.x += count }
     },
     left: {
