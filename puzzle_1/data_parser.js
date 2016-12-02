@@ -19,6 +19,7 @@ DataParser.prototype = {
     var count = parseInt( countString );
     return [ direction, count ];
   },
+  
   parseData: function( data ) {
 
     var splitData = this.splitData( data );
@@ -26,6 +27,11 @@ DataParser.prototype = {
       return this.getDirectionCount( item );
     }.bind( this ) );
     this.data = output;
+  },
+
+  next: function() {
+
+    return this.data.shift();
   }
 };
 
