@@ -11,9 +11,10 @@ describe( "Solution", function() {
 
   it( "Should have xTotal starting at 0", function() {
     assert.equal( 0, solution.xTotal );
-  })
+  });
 
   it( "Should have yTotal starting at 0", function() {
     assert.equal( 0, solution.yTotal );
-  })
+  });
+    
 });
