@@ -16,6 +16,9 @@ describe( "Data Parser", function() {
   it( "should return array of directions and counts from parseData -- test 1", function() {
     var input = "R14, L3";
     var expected = [["turnRight", 14], ["turnLeft", 3]];
-    assert.deepEqual( expected, dataParser.parseData( input ) );
+    dataParser.parseData( input )
+    assert.deepEqual( expected, dataParser.data );
   });
+
+
 });
