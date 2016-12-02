@@ -1,0 +1,14 @@
+{
+  "name": "advent_of_code",
+  "version": "1.0.0",
+  "description": "http://adventofcode.com/2016",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha specs"
+  },
+  "author": "MJeorrett",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^3.2.0"
+  }
+}
