@@ -8,7 +8,8 @@ var dataParser = {
 
   getDirectionCount: function( entry ) {
 
-    var direction = entry[0];
+    var directionSymbol = entry[0];
+    var direction = directionSymbol === "R" ? "turnRight" : "turnLeft";
     var countString = entry.substring( 1 );
     var count = parseInt( countString );
     return [ direction, count ];
