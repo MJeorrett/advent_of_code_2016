@@ -1,4 +1,9 @@
-var dataParser = {
+var DataParser = function() {
+
+  this.data = [];
+}
+
+DataParser.prototype = {
 
   splitData: function( data ) {
 
@@ -20,8 +25,8 @@ var dataParser = {
     var output = splitData.map( function( item ){
       return this.getDirectionCount( item );
     }.bind( this ) );
-    return output;
+    this.data = output;
   }
 };
 
-module.exports = dataParser;
+module.exports = DataParser;

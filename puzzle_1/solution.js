@@ -1,3 +1,5 @@
+var dataParser = require('./data_parser');
+
 var Solution = function() {
 
   this.xTotal = 0;
@@ -27,8 +29,13 @@ Solution.prototype = {
       turnLeft: 'right',
       move: function( count ) { this.y -= count }
     }
-  }
+  },
 
+  solve: function( rawData ) {
+
+    var data = dataParser.parseData( rawData );
+    var current_direction
+  }
 }
 
 module.exports = Solution;
