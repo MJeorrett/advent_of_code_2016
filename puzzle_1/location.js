@@ -1,10 +1,10 @@
-var Point = function() {
+var Location = function() {
 
   this.x = 0;
   this.y = 0;
 };
 
-Point.prototype = {
+Location.prototype = {
   moveX: function( distance ) {
     this.x += distance;
   },
@@ -13,4 +13,4 @@ Point.prototype = {
   }
 };
 
-module.exports = Point;
+module.exports = Location;
