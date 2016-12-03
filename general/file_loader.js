@@ -1,8 +1,6 @@
 var fs = require('fs');
 
-var FileLoader = function() {};
-
-FileLoader.prototype.load = function( filename ) {
+loadFile = function( filename ) {
   var buffer = fs.readFileSync( filename );
   var bufferString = undefined;
 
@@ -15,3 +13,5 @@ FileLoader.prototype.load = function( filename ) {
 
   return bufferString;
 };
+
+module.exports = loadFile;
