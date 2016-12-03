@@ -4,8 +4,8 @@ var dataParser = function( data ) {
 
   var result = lines.map( function( line ) {
 
-    var numberStrings = line.split( " " );
-    
+    var numberStrings = line.split( "  " );
+
     var numbers = numberStrings.map( function( numberString ){
       return parseInt( numberString );
     });
