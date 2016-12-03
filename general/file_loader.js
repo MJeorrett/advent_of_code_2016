@@ -9,6 +9,7 @@ loadFile = function( filename ) {
   }
   else {
     var bufferString = buffer.toString();
+    bufferString = bufferString.trim();
   }
 
   return bufferString;
