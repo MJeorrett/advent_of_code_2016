@@ -1,4 +1,5 @@
 var assert = require('assert');
+var Point = require('../point');
 
 describe( "Point", function() {
 
@@ -11,12 +12,12 @@ describe( "Point", function() {
 
   it( "should start with x = 0", function() {
 
-    assert.equal( 0, point.x );
+    assert.equal( 0, myPoint.x );
   });
 
   it( "should start with x = 0", function() {
 
-    assert.equal( 0, point.x );
+    assert.equal( 0, myPoint.x );
   });
 
   it( "should increase x by positive value passed to moveX()", function() {
