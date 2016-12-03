@@ -37,4 +37,20 @@ describe( "Data Parser", function() {
     ];
     assert.deepEqual( expected, dataParser.normalise( input ) );
   });
+
+  it( "should normalise wiggle correctly", function() {
+    input = [
+      ['R', 1],
+      ['L', 2],
+      ['R', 5],
+      ['L', 4]
+    ];
+    expected = [
+      ['R', 1],
+      ['U', 2],
+      ['R', 5],
+      ['U', 4]
+    ];
+    assert.deepEqual( expected, dataParser.normalise( input ) );
+  });
 });
