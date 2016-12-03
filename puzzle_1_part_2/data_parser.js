@@ -41,8 +41,6 @@ var dataParser = {
 
     var currentDirection = 'U';
 
-    console.log( "data:", data );
-
     var result = data.map( function( item ) {
 
       var itemRotation = item[0];
