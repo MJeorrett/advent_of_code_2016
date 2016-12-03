@@ -1,9 +1,5 @@
 var dataParser = function( data ) {
 
-console.log("data start");
-  console.log( data );
-  console.log( "data end");
-
   var lines = data.split( "\n" );
 
   var result = lines.map( function( line ) {
