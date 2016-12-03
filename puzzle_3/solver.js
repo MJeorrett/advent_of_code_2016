@@ -14,6 +14,7 @@ var solver = {
   solve: function( dataString ) {
 
     var data = dataParser( dataString );
+    console.log("Data:", data);
     var answer = data.reduce( function( count, dataRow ) {
       if ( this.solveRow( dataRow ) ) {
         count++;

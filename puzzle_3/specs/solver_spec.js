@@ -19,8 +19,8 @@ describe( "Solver", function() {
   });
 
   it( "should solve example 1", function() {
-    var input = "123 45 6";
-    input +=  "\n11 222 333";
+    var input = "123  45  6";
+    input +=  "\n11  222  333";
     assert.equal( 1, solver.solve( input ) );
   });
 
