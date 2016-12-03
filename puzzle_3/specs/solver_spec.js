@@ -18,4 +18,10 @@ describe( "Solver", function() {
     assert.equal( true, solver.solveRow( [6, 20, 25] ) );
   });
 
+  it( "should solve example 1", function() {
+    var input = "123 45 6";
+    input +=  "\n11 222 333";
+    assert.equal( 1, solver.solve( input ) );
+  });
+
 });
