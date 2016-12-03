@@ -52,6 +52,12 @@ var dataParser = {
     }.bind( this ) );
 
     return result;
+  },
+
+  parseNormalised: function( dataString ) {
+
+    var data = this.parse( dataString );
+    return this.normalise( data );
   }
 };
 
