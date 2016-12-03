@@ -6,6 +6,16 @@ var dataParser = {
     var distance = parseInt( distanceString );
 
     return [ turn, distance ];
+  },
+
+  parse: function( dataString ) {
+
+    var itemStrings = dataString.split( ", " );
+    
+    return itemStrings.map( function( itemString ) {
+
+      return this.parseItem( itemString );
+    }.bind( this ) );
   }
 };
 
