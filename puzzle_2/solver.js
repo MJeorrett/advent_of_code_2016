@@ -10,6 +10,26 @@ Solver.prototype = {
     [7, 8, 9]
   ],
 
+  solve: function ( dataString ) {
+
+    var dataParser = new DataParser;
+    var clues = dataParser.parse( dataString );
+    var answer = "";
+    var currentPosition = 5;
+
+    for( var aClue of clues ) {
+
+      aClue.forEach( function( direction ) {
+
+        currentPosition = this.moveDirectionFrom( direction, currentPosition );
+      }.bind( this ) );
+      answer += currentPosition.toString();
+    }
+
+    return answer;
+
+  },
+
   moveDirectionFrom: function( direction, startNumber ) {
 
     var result = startNumber;
@@ -87,14 +107,6 @@ Solver.prototype = {
 
     return this.numberRowsAndColumns[ number.toString() ].column;
   }
-};
-
-Solver.prototype.solve = function ( dataString ) {
-
-  var dataParser = new DataParser;
-  var dataArray = dataParser.parse( dataString );
-
-
 };
 
 module.exports = Solver;
