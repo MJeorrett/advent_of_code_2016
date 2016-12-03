@@ -58,7 +58,7 @@ describe( "Solver", function() {
     var input = column2.concat( column3 );
 
     for ( var num of input ) {
-      assert.equal( num + 1, solver.moveDirectionFrom( "R", num ) );
+      assert.equal( num - 1, solver.moveDirectionFrom( "L", num ) );
     }
   });
 
@@ -66,15 +66,15 @@ describe( "Solver", function() {
     var input = row1.concat( row2 );
 
     for ( var num of input ) {
-      assert.equal( num + 3, solver.moveDirectionFrom( "R", num ) );
+      assert.equal( num + 3, solver.moveDirectionFrom( "D", num ) );
     }
   });
 
-  it( "should return number - 3 when moving down from rows 2 and 3", function() {
+  it( "should return number - 3 when moving up from rows 2 and 3", function() {
     var input = row2.concat( row3 );
 
     for ( var num of input ) {
-      assert.equal( num - 3, solver.moveDirectionFrom( "R", num ) );
+      assert.equal( num - 3, solver.moveDirectionFrom( "U", num ) );
     }
   });
 
