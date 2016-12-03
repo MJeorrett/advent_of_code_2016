@@ -1,4 +1,5 @@
 var assert = require('assert');
+var DataParser = require('../data_parser');
 
 describe( "DataParser", function() {
 
@@ -24,6 +25,6 @@ describe( "DataParser", function() {
       [U, U, U, U, D]
     ];
 
-    assert.equal( expected, dataParser.parse( input1 ) );
+    assert.deepEqual( expected, dataParser.parse( input1 ) );
   });
 });
