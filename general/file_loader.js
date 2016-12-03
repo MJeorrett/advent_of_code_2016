@@ -8,7 +8,7 @@ loadFile = function( filename ) {
     console.log( "FileLoader: Error could not load file", filename );
   }
   else {
-    var bufferString = buffer.toString;
+    var bufferString = buffer.toString();
   }
 
   return bufferString;
