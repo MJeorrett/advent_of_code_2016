@@ -26,6 +26,22 @@ describe( "Solver", function() {
     assert.deepEqual( [2, 1], solver.rowAndColumnOfNumber( 8 ) );
   });
 
+  it( "should return same coordinates when moving up from row 0", function() {
+    assert.deepEqual( [0, 1], solver.moveDirectionFrom( "U", [0, 1] ) );
+  });
+
+  it( "should return same coordinates when moving down from row 2", function() {
+    assert.deepEqual( [2, 1], solver.moveDirectionFrom( "D", [2, 1] ) );
+  });
+
+  it( "should return same coordinates when moving right from column 2", function() {
+    assert.deepEqual( [2, 2], solver.moveDirectionFrom( "R", [2, 2] ) );
+  });
+
+  it( "should return same coordinates when moving left from column 0", function() {
+    assert.deepEqual( [2, 0], solver.moveDirectionFrom( "L", [2, 0] ) );
+  });
+
   // it( "should return answer '1985' to example problem 1", function() {
   //
   //   var input = "ULL\nRRDDD\nLURDL\nUUUUD";
