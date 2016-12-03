@@ -10,7 +10,7 @@ describe( "Data Parser", function() {
   });
 
   it( "should contain array of parsed items from parse()", function() {
-    intput = "R4, R2, L192, R5, L2, R53";
+    input = "R4, R2, L192, R5, L2, R53";
     expected = [
       ['R', 4],
       ['R', 2],
