@@ -49,6 +49,19 @@ describe( "Solution", function() {
     assert.equal( 2, solution3.yTotal() );
   });
 
-  it( "Should ")
+  it( "Should have answer 5 for problem 1", function() {
+
+    assert.equal( 5, solution1.answer );
+  });
+
+  it( "Should have answer 2 for problem 2", function() {
+
+    assert.equal( 2, solution1.answer );
+  });
+
+  it( "Should have answer 12 for problem 3", function() {
+
+    assert.equal( 12, solution1.answer );
+  });
 
 });
