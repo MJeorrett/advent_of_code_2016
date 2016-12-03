@@ -4,6 +4,7 @@ var Location = require('./location');
 var Solution = function() {
 
   this.location = new Location();
+  this.answer = null;
 }
 
 Solution.prototype = {
@@ -57,6 +58,8 @@ Solution.prototype = {
       moveFunction( nextCount, this.location );
       nextMovement = dataParser.next();
     }
+
+    this.answer = Math.abs( this.xTotal() ) + Math.abs( this.yTotal() );
   }
 }
 
