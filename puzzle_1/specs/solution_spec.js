@@ -56,12 +56,12 @@ describe( "Solution", function() {
 
   it( "Should have answer 2 for problem 2", function() {
 
-    assert.equal( 2, solution1.answer );
+    assert.equal( 2, solution2.answer );
   });
 
   it( "Should have answer 12 for problem 3", function() {
 
-    assert.equal( 12, solution1.answer );
+    assert.equal( 12, solution3.answer );
   });
 
 });
