@@ -21,4 +21,20 @@ describe( "Data Parser", function() {
     ];
     assert.deepEqual( expected, dataParser.parse( input ) );
   });
+
+  it( "should normalise round in circle correctly", function() {
+    input = [
+      ['R', 1],
+      ['R', 2],
+      ['R', 3],
+      ['R', 4]
+    ];
+    expected = [
+      ['R', 1],
+      ['D', 2],
+      ['L', 3],
+      ['U', 4]
+    ];
+    assert.deepEqual( expected, dataParser.normalise( input ) );
+  });
 });
