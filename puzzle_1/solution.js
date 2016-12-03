@@ -1,41 +1,44 @@
 var DataParser = require('./data_parser');
+var Location = require('./location');
 
 var Solution = function() {
 
-  this.xTotal = 0;
-  this.yTotal = 0;
-
-  var self = this;
-
-  this.moveX = function( count ) { this.xTotal += count };
-  this.moveY = function( count ) { this.yTotal += count };
-
-  this.right = {
-    turnRight: 'down',
-    turnLeft: 'up',
-    move: function( count ) { self.moveX( count ) }
-  };
-
-  this.left = {
-    turnRight: 'up',
-    turnLeft: 'down',
-    move: function( count ) { self.moveX( -count ) }
-  };
-
-  this.up = {
-    turnRight: 'right',
-    turnLeft: 'left',
-    move: function( count ) { self.moveY( count ) }
-  };
-
-  this.down = {
-    turnRight: 'left',
-    turnLeft: 'right',
-    move: function( count ) { self.moveY( -count ) }
-  };
+  this.location = new Location();
 }
 
 Solution.prototype = {
+
+  xTotal: function() {
+    return this.location.x;
+  },
+
+  yTotal: function() {
+    return this.location.y;
+  },
+
+  right: {
+    turnRight: 'down',
+    turnLeft: 'up',
+    move: function( count, location ) { location.moveX( count ) }
+  },
+
+  left: {
+    turnRight: 'up',
+    turnLeft: 'down',
+    move: function( count, location ) { location.moveX( -count ) }
+  },
+
+  up: {
+    turnRight: 'right',
+    turnLeft: 'left',
+    move: function( count, location ) { location.moveY( count ) }
+  },
+
+  down: {
+    turnRight: 'left',
+    turnLeft: 'right',
+    move: function( count, location ) { location.moveY( -count ) }
+  },
 
   solve: function( rawData ) {
 
@@ -49,7 +52,9 @@ Solution.prototype = {
       var nextDirection = nextMovement[0];
       var nextCount = nextMovement[1];
 
-      currentDirection = this[currentDirection][nextDirection];      this[currentDirection].move( nextCount );
+      currentDirection = this[currentDirection][nextDirection];
+      var moveFunction = this[currentDirection].move;
+      moveFunction( nextCount, this.location );
       nextMovement = dataParser.next();
     }
   }
