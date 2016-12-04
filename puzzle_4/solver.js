@@ -1,3 +1,5 @@
+var dataParser = require('./data_parser');
+
 var solver = {
 
   getLetterCounts: function( letters ) {
@@ -50,6 +52,22 @@ var solver = {
     }
 
     return result;
+  },
+
+  solve: function( data ) {
+    var dataLines = data.split( "\n" );
+    var sectorIdTotal = 0;
+
+    for ( var dataLine of dataLines ) {
+      var parsedLine = dataParser.parseLine( dataLine );
+      var letterCounts = this.getLetterCounts( parsedLine.letters );
+      var correctChecksum = this.getChecksum( letterCounts );
+      if ( parsedLine.checksum === correctChecksum ) {
+        sectorIdTotal += parsedLine.sectorId;
+      }
+    }
+
+    return sectorIdTotal;
   }
 };
 
