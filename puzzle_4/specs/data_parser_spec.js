@@ -1,4 +1,5 @@
 var assert = require('assert');
+var dataParser = require('../data_parser');
 
 describe( "Data Parser", function() {
   it( "split() should return object containing letters, sector id and checksum for example 1", function() {
@@ -8,7 +9,7 @@ describe( "Data Parser", function() {
       sectorId: 123,
       checksum: "abxyz"
     };
-    assert.deepEqual( expected, dataParser.parse( input ) );
+    assert.deepEqual( expected, dataParser.parseLine( input ) );
   });
 
   it( "split() should return object containing letters, sector id and checksum for example 2", function() {
@@ -18,7 +19,7 @@ describe( "Data Parser", function() {
       sectorId: 987,
       checksum: "abcde"
     };
-    assert.deepEqual( expected, dataParser.parse( input ) );
+    assert.deepEqual( expected, dataParser.parseLine( input ) );
   });
 
   it( "split() should return object containing letters, sector id and checksum for example 1", function() {
@@ -28,7 +29,7 @@ describe( "Data Parser", function() {
       sectorId: 404,
       checksum: "oarel"
     }
-    assert.deepEqual( expected, dataParser.parse( input ) );
+    assert.deepEqual( expected, dataParser.parseLine( input ) );
   });
 
   it( "split() should return object containing letters, sector id and checksum for example 1", function() {
@@ -38,6 +39,6 @@ describe( "Data Parser", function() {
       sectorId: 200,
       checksum: "decoy"
     }
-    assert.deepEqual( expected, dataParser.parse( input ) );
+    assert.deepEqual( expected, dataParser.parseLine( input ) );
   });
 });
