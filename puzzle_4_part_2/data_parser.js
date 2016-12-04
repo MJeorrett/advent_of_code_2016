@@ -3,8 +3,8 @@ var dataParser = {
 
     var lastDashIndex = dataLine.lastIndexOf( "-" );
 
-    var letters = dataLine.substr( 0, lastDashIndex );
-    var letters = letters.replace( /-/g, "" );
+    var inputCode = dataLine.substr( 0, lastDashIndex );
+    var letters = inputCode.replace( /-/g, "" );
 
     var sectorIdAndChecksum = dataLine.substr( lastDashIndex + 1 );
     var openSquareBracketIndex = sectorIdAndChecksum.indexOf( "[" );
@@ -16,6 +16,7 @@ var dataParser = {
     var checksum = sectorIdAndChecksum.substr( openSquareBracketIndex + 1, checksumLength );
 
     return {
+      inputCode: inputCode,
       letters: letters,
       sectorId: sectorId,
       checksum: checksum
