@@ -56,18 +56,18 @@ var solver = {
 
   solve: function( data ) {
     var dataLines = data.split( "\n" );
-    var sectorIdTotal = 0;
+    var validData = [];
 
     for ( var dataLine of dataLines ) {
       var parsedLine = dataParser.parseLine( dataLine );
       var letterCounts = this.getLetterCounts( parsedLine.letters );
       var correctChecksum = this.getChecksum( letterCounts );
       if ( parsedLine.checksum === correctChecksum ) {
-        sectorIdTotal += parsedLine.sectorId;
+        validData.push( parsedLine );
       }
     }
 
-    return sectorIdTotal;
+    return validData;
   }
 };
 
