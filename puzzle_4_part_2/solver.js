@@ -54,7 +54,7 @@ var solver = {
     return result;
   },
 
-  solve: function( data ) {
+  getRealRooms: function( data ) {
     var dataLines = data.split( "\n" );
     var validData = [];
 
