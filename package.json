@@ -4,7 +4,7 @@
   "description": "http://adventofcode.com/2016",
   "main": "index.js",
   "scripts": {
-    "test": "mocha puzzle_4/specs"
+    "test": "mocha puzzle_4_part_2/specs"
   },
   "author": "MJeorrett",
   "license": "ISC",
