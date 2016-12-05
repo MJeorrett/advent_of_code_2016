@@ -1,4 +1,5 @@
 var dataParser = require('./data_parser');
+var stringShifter = require('./string_shifter');
 
 var solver = {
 
@@ -68,6 +69,14 @@ var solver = {
     }
 
     return validData;
+  },
+
+  solve: function( realRooms ) {
+
+    for ( var room of realRooms ) {
+      var decodedName = stringShifter( room.inputCode, room.sectorId );
+      console.log( decodedName, ":", room.sectorId );
+    }
   }
 };
 
