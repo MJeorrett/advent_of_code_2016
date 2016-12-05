@@ -1,4 +1,5 @@
 var assert = require('assert');
+var solver = require('../solver');
 
 describe( "Solver", function() {
 
@@ -16,5 +17,5 @@ describe( "Solver", function() {
     var expected = [ 5278568, 'f' ];
     assert.equal( expected, solver.getNextChar( 'abc', 5017309 ) );
   });
-  
+
 });
