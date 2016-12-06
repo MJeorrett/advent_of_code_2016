@@ -1,6 +1,12 @@
 var fs = require('fs');
 
 loadFile = function( filename ) {
+  console.log("filename:", filename);
+  fs.readdir("./", (err, files) => {
+  files.forEach(file => {
+    console.log(file);
+  });
+})
   var buffer = fs.readFileSync( filename );
   var bufferString = undefined;
 
